@@ -10,6 +10,7 @@ export default function BackgroundScene({ scene }: { scene: Scene }) {
                 playsInline
                 className="w-full h-full object-cover"
             />
+            <iframe src={scene.videoSrc}  className="w-full h-full object-cover"></iframe>
             <audio src={scene.audioSrc} autoPlay loop></audio>
         </div>
     )
