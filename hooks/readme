@@ -1,0 +1,15 @@
+# Hooks
+
+Hooks are great for cleaning up your code.
+They let you move useState, useEffect and other logic out of your components into separate files.
+
+## Rules
+- Must start with `use` (e.g. `useUserName`, `useSettings`)
+- Always import React features at the top of the file
+- Always return what the component needs (state + functions)
+
+## Hooks in this project
+
+### useUserName
+Handles userName state, loading from localStorage, and saving to localStorage.
+Returns: `userName`, `saveUserName`, `mounted`

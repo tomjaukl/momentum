@@ -1,0 +1,52 @@
+# Git Cheatsheet
+
+## First time setup
+```bash
+git init                        # initialize a new repo
+git remote add origin <url>     # connect to GitHub repo
+```
+
+## Daily workflow
+```bash
+git status                      # see what files changed
+git add .                       # stage all changes
+git add <file>                  # stage specific file
+git commit -m "your message"    # save changes with a message
+git push                        # push to GitHub
+git pull                        # get latest changes from GitHub
+```
+
+## Branches
+```bash
+git branch                      # see all branches
+git branch <name>               # create new branch
+git checkout <name>             # switch to branch
+git checkout -b <name>          # create and switch in one step
+git merge <name>                # merge branch into current
+git branch -d <name>            # delete branch
+```
+
+## Useful extras
+```bash
+git log                         # see commit history
+git log --oneline               # compact commit history
+git diff                        # see exact changes in files
+git stash                       # temporarily save changes without committing
+git stash pop                   # bring stashed changes back
+git clone <url>                 # download a repo from GitHub
+```
+
+## Undo stuff
+```bash
+git restore <file>              # undo changes in a file
+git reset --soft HEAD~1         # undo last commit, keep changes
+git reset --hard HEAD~1         # undo last commit, delete changes
+```
+
+## Typical push workflow
+```bash
+git status
+git add .
+git commit -m "what I changed"
+git push
+```

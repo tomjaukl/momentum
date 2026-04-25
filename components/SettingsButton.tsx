@@ -4,7 +4,7 @@ import { Settings2, X } from 'lucide-react'
 import { useState} from 'react';
 import SettingsWindow from "./SettingsWindow";
 
-export default function SettingsButton() {
+export default function SettingsButton({name, onSave}: {name:string,onSave:(name: string) => void}) {
     const [isOpen, setIsOpen] = useState(false);
     return(
         <div>
@@ -12,7 +12,7 @@ export default function SettingsButton() {
             <Settings2 />
             </button>
             { isOpen && (
-                <SettingsWindow />
+                <SettingsWindow name={name} onSave={onSave} onClose={() => setIsOpen(false)} />
             )}
         </div>
     )
