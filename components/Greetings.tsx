@@ -1,7 +1,8 @@
 "use client"
 import { useState, useEffect } from "react";
+import SettingsButton from "./SettingsButton";
 
-export default function Greetings({ name }: { name: string }) {
+export default function Greetings({ name,onSave }: { name: string, onSave: (name: string) => void }) {
     const [now, setNow] = useState<Date | null>(null);
 
     useEffect(() => {
@@ -23,12 +24,10 @@ export default function Greetings({ name }: { name: string }) {
 
     return (
     <div className="flex justify-center items-center w-full">
+        <SettingsButton name={name} onSave={onSave} />
         <h1 className="text-center text-4xl">{getGreeting()}</h1>
         <div className="ml-4 flex flex-col items-center">
             <h1 className="text-center text-lg">{now?.toLocaleTimeString("cs-CZ", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }) ?? ""}</h1>
-            {/* <p className="text-center black">
-                {now?.toLocaleDateString("cs-CZ", { weekday: "long", day: "numeric", month: "long" }) ?? ""}
-            </p> */}
         </div>
     </div>
 );

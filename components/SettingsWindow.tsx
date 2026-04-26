@@ -15,6 +15,9 @@ export default function SettingsWindow({name, onSave, onClose}: {name: string, o
                 <h1 className="text-2xl p-2 text-center bg-yellow-400">Settings</h1>
                 <NameSettings name={name} onSave={onSave}/>
             </div>
+            <button className="bg-red-400 p-2 border-2" onClick={() => localStorage.removeItem('tasks')}>
+                Reset Tasks
+            </button>
         </div>,
         document.body
     )

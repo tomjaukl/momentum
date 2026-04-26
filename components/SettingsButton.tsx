@@ -7,7 +7,7 @@ import SettingsWindow from "./SettingsWindow";
 export default function SettingsButton({name, onSave}: {name:string,onSave:(name: string) => void}) {
     const [isOpen, setIsOpen] = useState(false);
     return(
-        <div>
+        <div className="absolute top-4 left-4">
             <button className='cursor-pointer' onClick={() => setIsOpen(!isOpen)}>
             <Settings2 />
             </button>
