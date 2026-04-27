@@ -4,7 +4,7 @@ import { Settings2, X } from 'lucide-react'
 import { useState} from 'react';
 import SettingsWindow from "./SettingsWindow";
 
-export default function SettingsButton({name, onSave}: {name:string,onSave:(name: string) => void}) {
+export default function SettingsButton({name, onSave, onClearTasks}: {name:string,onSave:(name: string) => void, onClearTasks: () => void}) {
     const [isOpen, setIsOpen] = useState(false);
     return(
         <div className="absolute top-4 left-4">
@@ -12,7 +12,7 @@ export default function SettingsButton({name, onSave}: {name:string,onSave:(name
             <Settings2 />
             </button>
             { isOpen && (
-                <SettingsWindow name={name} onSave={onSave} onClose={() => setIsOpen(false)} />
+                <SettingsWindow onClearTasks={onClearTasks} name={name} onSave={onSave} onClose={() => setIsOpen(false)} />
             )}
         </div>
     )

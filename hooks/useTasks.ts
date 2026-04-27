@@ -1,3 +1,4 @@
+"use client"
 import { Task } from "@/lib/Task";
 import {useState, useEffect} from "react";
 export default function useTasks() {
@@ -17,6 +18,19 @@ export default function useTasks() {
         setTasks(updatedTasks);
         localStorage.setItem('tasks', JSON.stringify(updatedTasks));
     }
+    function debuglog() {
+        alert(JSON.stringify(tasks))
+    }
+    function removeTask(index: number) {
+        const updatedTasks = tasks.filter((_, i) => i !== index);
+        setTasks(updatedTasks);
+        localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+        console.log(`Removed task at index ${index}`);
+    }
+    function clearAllTasks() {
+        setTasks([]);
+        localStorage.removeItem('tasks');
+    }
 
-    return { tasks, addTask};
+    return { tasks, addTask, debuglog, clearAllTasks, removeTask };
 }
