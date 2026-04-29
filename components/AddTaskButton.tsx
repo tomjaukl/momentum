@@ -5,7 +5,7 @@ export default function AddTaskButton({addTask}: {addTask: (content: string, tim
     const [isOpen, setIsOpen] = useState(false);
     return(
         <div>
-            <button className="absolute right-4 top-4 border-2 rounded-md cursor-pointer hover:bg-green-400/60"
+            <button className="absolute top-3 right-3 border-2 rounded-md cursor-pointer hover:bg-green-400/60"
              onClick={() => setIsOpen(!isOpen)}>
                 <Plus></Plus>
             </button>

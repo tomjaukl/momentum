@@ -3,7 +3,7 @@ export default function NameSettings({name, onSave} : {name: string, onSave: (na
     const [tempName, setTempName] = useState("");
 
     return (
-        <div className="flex bg-lime-200/50">
+        <div className="flex bg-white/20">
             <input type="text" 
             placeholder="Enter your nickname"
             value={tempName}
@@ -11,7 +11,7 @@ export default function NameSettings({name, onSave} : {name: string, onSave: (na
             className="p-1.5 border-2"
             />
             <input type="submit" value="Save" onClick={() => onSave(tempName)} 
-            className="cursor-pointer bg-green-400 w-full border-t-2 border-r-2 border-b-2"/>
+            className="cursor-pointer bg-white/20 w-full border-t-2 border-r-2 border-b-2"/>
         </div>
     )
 }

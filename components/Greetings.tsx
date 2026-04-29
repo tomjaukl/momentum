@@ -25,7 +25,7 @@ export default function Greetings({ name, onSave, onClearTasks }: { name: string
     return (
     <div className="flex justify-center items-center w-full">
         <SettingsButton onClearTasks={onClearTasks} name={name} onSave={onSave} />
-        <h1 className="text-center text-4xl">{getGreeting()}</h1>
+        <h1 className="text-center text-5xl p-5 ">{getGreeting()}</h1>
         <div className="ml-4 flex flex-col items-center">
             <h1 className="text-center text-lg">{now?.toLocaleTimeString("cs-CZ", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }) ?? ""}</h1>
         </div>

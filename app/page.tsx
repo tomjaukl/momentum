@@ -6,7 +6,7 @@ import useTasks from "@/hooks/useTasks";
 
 export default function Home() {
   return (
-    <div>
+    <div className="">
       <BackgroundScene scene={scenes[0]} />
       <MainContainer>
         <FetchedInfo/>
