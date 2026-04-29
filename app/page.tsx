@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="">
       <BackgroundScene scene={scenes[0]} />
-      <MainContainer audioPath={scenes[0].audioSrc}>
+      <MainContainer audioPath={scenes[0].audioSrc ?? ""}>
         <Pomodoro />
         <FetchedInfo/>
       </MainContainer>
